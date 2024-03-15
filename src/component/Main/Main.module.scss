@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Days Sans';
+  src: local('Days Sans Black'), local('DaysSansBlack'), url('../../font/dayssans/dayssansblack.woff2') format('woff2'), url('../../font/dayssans/dayssansblack.woff') format('woff'), url('../../font/dayssans/dayssansblack.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1060px) {
+    @content;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: rgb(255, 255, 255, 0);
+  text-align: center;
+  animation: moveRight 1s;
+  position: relative;
+  animation-delay: 1s;
+  margin-block: 30px;
+  font-family: 'Days Sans', sans-serif;
+  font-size: 35px;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(140,140,140,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include on-tablet {
+    padding-left: 50px;
+    text-align: left;
+    font-size: 60px;
+    box-sizing: border-box;
+  }
+
+  @include on-desktop {
+    font-size: 80px;
+    padding-left: 70px;
+  }
+}
+
+.cont {
+  @include on-tablet {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(-200%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

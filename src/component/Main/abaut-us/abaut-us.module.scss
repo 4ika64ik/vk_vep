@@ -1,0 +1,81 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1060px) {
+    @content;
+  }
+}
+
+.block {
+  padding-inline: 30px;
+  margin-inline: auto;
+
+  @include on-tablet {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    gap: 30px;
+  }
+  @include on-desktop {
+    max-width: none;
+  }
+}
+
+.abaut {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 1px 1px 1px black;
+
+  @include on-tablet {
+    font-size: 40px;
+    text-align: left;
+  }
+}
+
+.container {
+  @include on-tablet {
+    max-width: 444px;
+  }
+  @include on-desktop {
+    max-width: 700px;
+  }
+}
+
+.info {
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  text-shadow: 1px 1px 2px black;
+
+  @include on-tablet {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+.pho {
+  width: 100%;
+  border-radius: 10px;
+  margin-block: 20px;
+
+  @include on-tablet {
+    display: none;
+  }
+}
+
+.pho2 {
+  display: none;
+
+  @include on-tablet {
+    display: block;
+    height: 30vw;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+}

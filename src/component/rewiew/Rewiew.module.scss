@@ -1,0 +1,89 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1060px) {
+    @content;
+  }
+}
+
+.rewiew {
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+.title {
+  font-size: 40px;
+  padding-inline: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+
+  @include on-tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  @include on-desktop {
+    max-width: none;
+  }
+}
+
+.block {
+  background-color: rgba(24,30,36,.75);
+  padding: 20px 20px;
+  margin: 0 15px;
+  border-radius: 10px;
+  max-width: 305px;
+  box-sizing: border-box;
+  height: 494px;
+}
+
+.name {
+  font-size: 25px;
+}
+
+.ava {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.content {
+  margin-inline: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.block2 {
+  border-radius: 20px 0 0 20px;
+  max-width: 516px;
+  padding: 10px;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8044467787114846) 48%, rgba(255,255,255,0) 100%);
+
+  @include on-tablet {
+    max-width: 700px;
+  }
+  @include on-desktop {
+    max-width: 900px;
+  }
+}
+
+.name2 {
+  font-size: 25px;
+}

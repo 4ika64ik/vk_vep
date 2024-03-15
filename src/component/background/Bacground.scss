@@ -1,0 +1,46 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1060px) {
+    @content;
+  }
+}
+
+.backgrounderImg {
+  position: fixed;
+  right: -300px;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+  
+  @include on-tablet {
+    display: none;
+  }
+}
+
+video {
+  position: fixed;
+  right: -300px;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+  display: none;
+
+  @include on-tablet {
+    display: block;
+    right: -150px;
+  }
+  @include on-desktop {
+    right: 0;
+  }
+}
+
+video::-webkit-media-controls {
+  display:none !important;
+}
